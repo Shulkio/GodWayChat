@@ -17,18 +17,13 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 public class ViewServeur extends Application {
-
-	private ControllerServeur controllerServeur;
-	private TextArea textArea;
 	
 	public ViewServeur() {
-		textArea = new TextArea("Console effective");
-		controllerServeur = new ControllerServeur(textArea);
 	}
     
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Serveur GodGivenChat");
+        primaryStage.setTitle("Démarrage de GodWay Chat");
         primaryStage.setResizable(false);
         Group root = new Group();
         Scene scene = new Scene(root, 500, 300);
@@ -36,7 +31,6 @@ public class ViewServeur extends Application {
         //fermeture
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             public void handle(WindowEvent we) {
-                System.out.println("Fermeture du serveur. Bye bye!");
                 System.exit(0);
             }
         });        
@@ -46,19 +40,6 @@ public class ViewServeur extends Application {
         title.setX(60);
         title.setY(20);
         title.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
-        
-        // champs de texte
-        TextField textField = new TextField();
-        textField.setLayoutX(60);
-        textField.setLayoutY(275);
-        textField.setPrefWidth(330);
-        
-        // texte informatif
-        textArea.setPrefSize(400, 235);
-        textArea.setWrapText(true);
-        textArea.setLayoutX(60);
-        textArea.setLayoutY(30);
-        textArea.setEditable(false);
         
         // bouton fermer serv
         Button btn = new Button();
