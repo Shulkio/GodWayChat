@@ -1,44 +1,38 @@
-/*    */ package controller;
-/*    */ 
-/*    */ import java.io.BufferedReader;
-/*    */ import java.io.IOException;
-/*    */ import javafx.scene.control.TextArea;
-/*    */ 
-/*    */ public class ClientListener implements Runnable
-/*    */ {
-/*    */   BufferedReader in;
-/*    */   TextArea textArea;
-/*    */   private boolean closingThread;
-/*    */   
-/*    */   public ClientListener(BufferedReader in, TextArea textArea)
-/*    */   {
-/* 15 */     this.in = in;
-/* 16 */     this.closingThread = false;
-/* 17 */     this.textArea = textArea;
-/*    */   }
-/*    */   
-/*    */   public void run()
-/*    */   {
-/* 22 */     String line = "";
-/* 23 */     System.out.println("Aight j'écoute!");
-/* 24 */     while (!this.closingThread) {
-/*    */       try {
-/* 26 */         line = this.in.readLine();
-/*    */       } catch (IOException e) {
-/* 28 */         e.printStackTrace();
-/* 29 */         line = "Probleme de lecture";
-/*    */       }
-/* 31 */       this.textArea.appendText("\n" + line);
-/*    */     }
-/*    */   }
-/*    */   
-/*    */   public void fermerThread() {
-/* 36 */     this.closingThread = true;
-/*    */   }
-/*    */ }
+package controllerClient;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import javafx.scene.control.TextArea;
 
-/* Location:              C:\Users\Lewis GodGiven\Desktop\GGChat EXTERNE.jar!\controller\ClientListener.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       0.7.1
- */
+public class ClientListener implements Runnable
+{
+	BufferedReader in;
+	TextArea textArea;
+	private boolean closingThread;
+
+	public ClientListener(BufferedReader in, TextArea textArea)
+	{
+		this.in = in;
+		this.closingThread = false;
+		this.textArea = textArea;
+	}
+
+	public void run()
+	{
+		String line = "";
+		System.out.println("Aight j'écoute!");
+		while (!this.closingThread) {
+			try {
+				line = this.in.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+				line = "Probleme de lecture";
+			}
+			this.textArea.appendText("\n" + line);
+		}
+	}
+
+	public void fermerThread() {
+		this.closingThread = true;
+	}
+}

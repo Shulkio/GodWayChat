@@ -1,5 +1,6 @@
 package main;
 
+import viewServer.ViewServeur;
 import javafx.application.Application;
 
 public class Main2 {

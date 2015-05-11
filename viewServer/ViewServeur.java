@@ -39,7 +39,7 @@ public class ViewServeur extends Application {
                 System.out.println("Fermeture du serveur. Bye bye!");
                 System.exit(0);
             }
-        });        
+        });
         
         // titre
         Text title = new Text("Serveur : " + controllerServeur.getPublicIP() );
