@@ -40,7 +40,7 @@ public class ViewFirst extends Application {
         title.setFont(Font.font("Verdana", FontWeight.BOLD, 18));
         
         // descrption sous le titre
-        Text titleDesc = new Text("Choisissez si vous voulez démarrer un serveur ou un client");
+        Text titleDesc = new Text("Choisissez si vous voulez demarrer un serveur ou un client");
         titleDesc.setX(45);
         titleDesc.setY(60);
         titleDesc.setFont(Font.font("Verdana", FontWeight.NORMAL, 14));
@@ -107,7 +107,7 @@ public class ViewFirst extends Application {
             }
         });
         
-        // ajout de tous les items à la scene
+        // ajout de tous les items a la scene
         root.getChildren().add(title);
         root.getChildren().add(titleDesc);
         root.getChildren().add(servDesc);
